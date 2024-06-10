@@ -26,3 +26,8 @@ SummitConnect is an innovative application designed to enhance the networking an
 
 # Example of the Pathway that gets extracted when running the query against the Neo4j Aura cloud instance that we've deployed:
 <img width="896" alt="image" src="https://github.com/friedliver/data-ai-summit-2024-hackathon/assets/77113505/bf0b2242-43df-46e5-9cb2-6a8b76131e82">
+
+# Results returned from running the generated Cypher query:
+<img width="767" alt="image" src="https://github.com/friedliver/data-ai-summit-2024-hackathon/assets/77113505/b4a04318-ee1c-4136-ba60-64aecde126e9">
+
+This will then get woven into the final response by another instance of Llama 3 70b and shown to the end user.
