@@ -21,7 +21,7 @@ SummitConnect is an innovative application designed to enhance the networking an
 - **Mosaic AI Vector Search**: This AI-native embedding database facilitated semantic matching, enabling users to find speakers with similar backgrounds, topics, and biographies. We used the Databricks Ecosystem for self-hosting our vector database.
 - **BGE Embeddings Model**: Hosted via Databricks, this model provides high-quality embeddings that capture the meaning and context of textual data, enhancing our semantic search capabilities.
 
-### Example of Cypher Query generation using Llama 3 70b
+### Example of Cypher Query generation using Llama 3 70b:
 <img width="924" alt="image" src="https://github.com/friedliver/data-ai-summit-2024-hackathon/assets/77113505/40bc8aea-0573-4bae-bab0-78ecda83d377">
 
 ### Example of the Pathway that gets extracted when running the query against the Neo4j Aura cloud instance that we've deployed:
