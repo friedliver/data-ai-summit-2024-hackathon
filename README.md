@@ -21,41 +21,6 @@ SummitConnect is an innovative application designed to enhance the networking an
 - **Mosaic AI Vector Search**: This AI-native embedding database facilitated semantic matching, enabling users to find speakers with similar backgrounds, topics, and biographies. We used the Databricks Ecosystem for self-hosting our vector database.
 - **BGE Embeddings Model**: Hosted via Databricks, this model provides high-quality embeddings that capture the meaning and context of textual data, enhancing our semantic search capabilities.
 
-### Installation
+# Example of Cypher Query generation using Llama 3 70b
 
-1. **Clone the repository**:
-    ```bash
-    git clone https://github.com/yourusername/summitconnect.git
-    cd summitconnect
-    ```
-
-2. **Install dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3. **Set up Neo4j**:
-    - Sign up for Neo4j Aura and get your credentials.
-    - Update your Neo4j credentials in the script or environment variables.
-
-4. **Run the application**:
-    ```bash
-    python app.py
-    ```
-
-### Usage
-
-1. **Data Processing**:
-    - Use the `process_data.py` script to clean and process the provided data.
-    - The script will normalize and clean the data, then upload it to the Neo4j database.
-
-2. **Querying**:
-    - Use the `generate_cypher_prompt` function to translate natural language questions into Cypher queries.
-    - Use the `generate_response_prompt` function to synthesize responses to user queries using context retrieved from the vector database.
-
-### Challenges
-
-- **Data Consistency**: Normalizing and cleaning data with various formats, missing values, and inconsistent formatting.
-- **Identifying Valuable Metadata**: Determining the most valuable metadata for modeling in Neo4j and embedding in Mosaic AI Vector Search.
-- **Modeling Data for Neo4j**: Designing a schema to accurately represent complex relationships between speakers, sessions, topics, and companies.
-- **Curation of Vectorized Metadata**: Ensuring relevant metadata properties for embedding comparisons to user queries.
+<img width="839" alt="image" src="https://github.com/friedliver/data-ai-summit-2024-hackathon/assets/77113505/de6ccc07-e747-41b3-8fc2-5e8218679ce1">
