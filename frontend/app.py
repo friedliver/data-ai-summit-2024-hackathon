@@ -3,7 +3,8 @@ import string
 import random
 import os
 
-from databricks_genai_inference import ChatCompletion
+from databricks import vector_search
+from databricks_genai_inference import ChatCompletion, Embedding
 from neo4j import GraphDatabase
 
 
@@ -23,14 +24,31 @@ def chat_actions():
         {"role": "user", "content": st.session_state["chat_input"]},
     )
 
-    # Generate cipher query
-    cipher_query = ""
+    # Embed user input
+    embeded_input = Embedding.create(
+        model="bge-large-en",
+        input="3D ActionSLAM: wearable person tracking in multi-floor environments")[0]
 
-    # Fetch data from neo4j
-    with GraphDatabase.driver(f"{NEO4J_PROTOCOL}{NEO4J_CONNECTION_URL}", auth=(NEO4J_USER, NEO4J_PASSWORD)) as driver:
-        records,_,_ = driver.execute_query(cipher_query, database_="neo4j")
-        for record in records:
-            print(record)
+    # Vector search with user input
+    client = vector_search.VectorSearchClient()
+
+    results = client.similarity_search(
+        index_name="speakers_index",  # Replace with your actual index name
+        query_vector=embeded_input,  # Replace with your actual query vector
+        num_results=5  # Number of results to return
+    )
+
+    for result in results:
+        print(result)
+
+    # # Generate cipher query
+    # cipher_query = ""
+
+    # # Fetch data from neo4j
+    # with GraphDatabase.driver(f"{NEO4J_PROTOCOL}{NEO4J_CONNECTION_URL}", auth=(NEO4J_USER, NEO4J_PASSWORD)) as driver:
+    #     records,_,_ = driver.execute_query(cipher_query, database_="neo4j")
+    #     for record in records:
+    #         print(record)
 
     # Build context/prompt
 
