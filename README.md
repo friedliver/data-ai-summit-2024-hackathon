@@ -22,5 +22,4 @@ SummitConnect is an innovative application designed to enhance the networking an
 - **BGE Embeddings Model**: Hosted via Databricks, this model provides high-quality embeddings that capture the meaning and context of textual data, enhancing our semantic search capabilities.
 
 # Example of Cypher Query generation using Llama 3 70b
-
-<img width="839" alt="image" src="https://github.com/friedliver/data-ai-summit-2024-hackathon/assets/77113505/de6ccc07-e747-41b3-8fc2-5e8218679ce1">
+<img width="924" alt="image" src="https://github.com/friedliver/data-ai-summit-2024-hackathon/assets/77113505/40bc8aea-0573-4bae-bab0-78ecda83d377">
