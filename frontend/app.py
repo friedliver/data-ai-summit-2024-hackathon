@@ -2,21 +2,22 @@ import streamlit as st
 import string
 import random
 import os
+from dotenv import load_dotenv
 
 from databricks import vector_search
 from databricks_genai_inference import ChatCompletion, Embedding
 from neo4j import GraphDatabase
 
+# Load environment variables from .env file
+load_dotenv()
 
-NEO4J_PROTOCOL = os.environ["NEO4J_PROTOCOL"]
-NEO4J_CONNECTION_URL = os.environ["NEO4J_CONNECTION_URL"]
-NEO4J_USER = os.environ["NEO4J_USER"]
-NEO4J_PASSWORD = os.environ["NEO4J_PASSWORD"]
+NEO4J_PROTOCOL = os.getenv("NEO4J_PROTOCOL")
+NEO4J_CONNECTION_URL = os.getenv("NEO4J_CONNECTION_URL")
+NEO4J_USER = os.getenv("NEO4J_USER")
+NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
 
-
-def randon_string() -> str:
+def random_string() -> str:
     return "".join(random.choices(string.ascii_uppercase + string.digits, k=10))
-
 
 def chat_actions():
     # Add user input to chat history
@@ -65,10 +66,8 @@ def chat_actions():
         },  # This can be replaced with your chat response logic
     )
 
-
 if "chat_history" not in st.session_state:
     st.session_state["chat_history"] = []
-
 
 st.chat_input("Enter your message", on_submit=chat_actions, key="chat_input")
 
